@@ -10,20 +10,22 @@ source:
   sha256: e68e93862cf728d2c4cec5237cf62e410d19be168c1c6d68fa5ed13bf543c6d6
 
 build:
-  number: 0
+  number: 1
   noarch: python
   script: "{{ PYTHON }} -m pip install . -vv"
 
 requirements:
   host:
     - pip
-    - python  >3
+    - python {{ python_min }}
   run:
     - numpy
     - pandas
-    - python  >3
+    - python >={{ python_min }}
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - pandas_schema
 
