@@ -1,5 +1,5 @@
 {% set name = "pandas_schema" %}
-{% set version = "0.3.5" %}
+{% set version = "0.3.6" %}
 
 package:
   name: "{{ name|lower }}"
@@ -7,7 +7,7 @@ package:
 
 source:
   url: "https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz"
-  sha256: e68e93862cf728d2c4cec5237cf62e410d19be168c1c6d68fa5ed13bf543c6d6
+  sha256: c6bfc52c4bae9cdd7420fbe8c4b0622b769457827c3fc819928405638caf605f
 
 build:
   number: 0
@@ -20,7 +20,8 @@ requirements:
     - python  >3
   run:
     - numpy
-    - pandas
+    - pandas >=0.19
+    - packaging
     - python  >3
 
 test:
